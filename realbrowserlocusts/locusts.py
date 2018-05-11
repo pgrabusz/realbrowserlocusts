@@ -21,11 +21,9 @@ class RealBrowserLocust(Locust):
     def __init__(self):
         super(RealBrowserLocust, self).__init__()
         if self.screen_width is None:
-            raise LocustError("You must specify a screen_width "
-                              "for the browser")
+            self.screen_width = 1024
         if self.screen_height is None:
-            raise LocustError("You must specify a screen_height "
-                              "for the browser")
+            self.screen_height = 768
 
 
 class ChromeLocust(RealBrowserLocust):
